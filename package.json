@@ -1,0 +1,23 @@
+{
+  "name": "kyrios",
+  "version": "1.0.0",
+  "description": "a project with vue",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^2.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pickcle/kyrios.git"
+  },
+  "author": "xiaohj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pickcle/kyrios/issues"
+  },
+  "homepage": "https://github.com/Pickcle/kyrios#readme"
+}
