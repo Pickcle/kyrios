@@ -11,9 +11,9 @@ new Vue({
   store,
   router,
   methods: {
-    ...mapActions: {
+    ...mapActions({
       increase: Types.INCREASE,
       decrease: Types.DECREASE
-    }
+    })
   }
 })
