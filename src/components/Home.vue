@@ -3,10 +3,20 @@
 </template>
 
 <script>
+  import * as Types from 'src/constants/Types'
+
   export default {
     data () {
       return {
         count: 1
+      }
+    },
+    methods: {
+      [Types.INCREASE]({commit}) {
+        commit(Types.INCREASE)
+      },
+      [Types.DECREASE]({commit}) {
+        commit(Types.DECREASE)
       }
     }
   }

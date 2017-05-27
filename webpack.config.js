@@ -17,6 +17,9 @@ module.exports = {
   },
 
   resolve: {
+    alias: {
+      'src': path.join(ROOT_PATH, './src')
+    },
     extensions: ['.js', '.vue', '.styl', '.jade']
   },
 
@@ -27,12 +30,13 @@ module.exports = {
       //   loader: 'eslint'
       // },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader'
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.jade$/,
