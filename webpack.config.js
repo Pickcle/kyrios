@@ -1,8 +1,10 @@
-const path = require('path')
+var path = require('path')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const ROOT_PATH = __dirname
-const PUBLISH_PATH = path.join(__dirname, 'static')
-const SRC_PATH = path.join(__dirname, 'src')
+var ROOT_PATH = __dirname
+var PUBLISH_PATH = path.join(__dirname, 'static')
+var SRC_PATH = path.join(__dirname, 'src')
 
 module.exports = {
   entry: {
@@ -11,7 +13,7 @@ module.exports = {
 
   output: {
     path: PUBLISH_PATH,
-    filename: '[name].js'
+    filename: '[name]-[chunkhash].js'
   },
 
   resolve: {
@@ -45,5 +47,13 @@ module.exports = {
         loader: 'url-loader'
       }
     ]
-  }
+  },
+
+  plugins: [
+    new CleanWebpackPlugin(PUBLISH_PATH),
+    new HtmlWebpackPlugin({
+      template: path.join(SRC_PATH, 'index.html'),
+      filename: 'index.html'
+    })
+  ]
 }
