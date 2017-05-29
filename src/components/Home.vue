@@ -1,23 +1,36 @@
 <template lang="jade">
-  h1 {{count}}
+  div
+    h1 {{count}}
+    button(@click="onIncreaseClick") increase
+    button(@click="onDecreaseClick") decrease
+
 </template>
 
 <script>
+  import { mapState, mapActions } from 'vuex'
+
   import * as Types from 'src/constants/Types'
 
   export default {
-    data () {
-      return {
-        count: 1
-      }
-    },
     methods: {
-      [Types.INCREASE]({commit}) {
-        commit(Types.INCREASE)
+      onIncreaseClick () {
+        this.increase()
       },
-      [Types.DECREASE]({commit}) {
-        commit(Types.DECREASE)
-      }
+
+      onDecreaseClick () {
+        this.decrease()
+      },
+
+      ...mapActions({
+        increase: Types.INCREASE,
+        decrease: Types.DECREASE
+      })
+    },
+
+    computed: {
+      ...mapState({
+        count: state => state.count
+      })
     }
   }
 </script>
