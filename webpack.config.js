@@ -18,7 +18,8 @@ module.exports = {
 
   resolve: {
     alias: {
-      'src': path.join(ROOT_PATH, './src')
+      'vue': 'vue/dist/vue.js',
+      'src': SRC_PATH
     },
     extensions: ['.js', '.vue', '.styl', '.jade']
   },
@@ -30,13 +31,13 @@ module.exports = {
       //   loader: 'eslint'
       // },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
       },
       {
         test: /\.jade$/,
@@ -56,7 +57,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(PUBLISH_PATH),
     new HtmlWebpackPlugin({
-      template: path.join(SRC_PATH, 'index.html'),
+      template: path.join(SRC_PATH, 'index.jade'),
+      inject: true,
       filename: 'index.html'
     })
   ]
