@@ -4,5 +4,16 @@ import { mapActions } from 'vuex'
 import router from './router.js'
 import store from './store'
 
+import SideBar from './components/SideBar.vue'
+
+import './style/index.styl'
+
 /* eslint no-new: 0 */
-new Vue({ store, router }).$mount('#app')
+new Vue({
+  el: '#app',
+  components: {
+    SideBar
+  },
+  store,
+  router
+})
