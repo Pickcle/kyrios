@@ -1,6 +1,7 @@
 var path = require('path')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 var ROOT_PATH = __dirname
 var PUBLISH_PATH = path.join(__dirname, 'static')
@@ -13,7 +14,7 @@ module.exports = {
 
   output: {
     path: PUBLISH_PATH,
-    filename: '[name]-[chunkhash].js'
+    filename: '[name].js'
   },
 
   resolve: {
@@ -45,7 +46,8 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        loader: 'stylus-loader'
+        loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
+        loader: 'css-loader!stylus-loader'
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
@@ -56,6 +58,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(PUBLISH_PATH),
+    new ExtractTextPlugin("style.css"),
     new HtmlWebpackPlugin({
       template: path.join(SRC_PATH, 'index.jade'),
       inject: true,
