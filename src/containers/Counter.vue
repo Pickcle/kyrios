@@ -23,7 +23,8 @@
 
       ...mapActions({
         increase: CounterTypes.INCREASE,
-        decrease: CounterTypes.DECREASE
+        decrease: CounterTypes.DECREASE,
+        reset: CounterTypes.RESET
       })
     },
 
@@ -31,6 +32,15 @@
       ...mapState({
         count: state => state.counter.count
       })
+    },
+
+    beforeMount () {
+      console.count('xhjLog: beforeMount')
+    },
+
+    beforeDestroy () {
+      this.reset()
+      console.count('xhjLog: beforeDestroy')
     }
   }
 </script>

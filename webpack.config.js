@@ -47,7 +47,6 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
-        loader: 'css-loader!stylus-loader'
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,

@@ -10,7 +10,10 @@ export default {
       state.count++
     },
     [CounterTypes.DECREASE] (state) {
-      state.count++
+      state.count--
+    },
+    [CounterTypes.RESET] (state) {
+      state.count = 1
     }
   },
 
@@ -20,6 +23,9 @@ export default {
     },
     [CounterTypes.DECREASE] ({ commit }) {
       commit(CounterTypes.DECREASE)
+    },
+    [CounterTypes.RESET] ({ commit }) {
+      commit(CounterTypes.RESET)
     }
   }
 }
