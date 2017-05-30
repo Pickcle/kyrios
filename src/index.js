@@ -4,7 +4,7 @@ import { mapActions } from 'vuex'
 import router from './router.js'
 import store from './store'
 
-import SideBar from './components/SideBar.vue'
+import SideBar from './components/SideBar'
 
 import './style/index.styl'
 
