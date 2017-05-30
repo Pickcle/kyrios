@@ -6,5 +6,9 @@ export default [
   {
     name: 'Counter',
     route: 'counter'
+  },
+  {
+    name: 'Countdown',
+    route: 'countdown'
   }
 ]
