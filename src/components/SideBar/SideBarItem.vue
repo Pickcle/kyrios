@@ -1,6 +1,6 @@
 <template lang="jade">
   div.side-bar-item(@click="onSelfClick")
-    span {{data.name}}
+    span {{data.route}}
 </template>
 
 <script>

@@ -9,30 +9,7 @@
   export default {
     props: {
       navList: {
-        type: Array,
-        default: [
-          {
-            name: 'home',
-            route: 'home'
-          },
-          {
-            name: 'counter',
-            route: 'counter'
-          },
-          {
-            name: 'others',
-            subTabs: [
-              {
-                name: 'countdown',
-                route: 'countdown'
-              },
-              {
-                name: 'navdrop',
-                route: 'navdrop'
-              }
-            ]
-          }
-        ]
+        type: Array
       }
     },
 
