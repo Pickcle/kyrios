@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import sidebarConfig from './config/sidebarConfig.js'
-import Home from 'src/containers/Home.vue'
+import Home from 'src/containers/Home'
 
 Vue.use(VueRouter)
 
@@ -24,7 +24,7 @@ sidebarConfig.forEach(value => {
   componentName = getComponentName(value.route)
   const route = {
     path: `/${value.route}`,
-    component: require(`src/containers/${componentName}`)
+    component: require(`src/containers/${componentName}/index.vue`)
   }
   routes.push(route)
 })
