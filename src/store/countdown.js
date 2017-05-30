@@ -2,7 +2,7 @@ import * as CountdownTypes from 'src/constants/CountdownTypes.js'
 
 export default {
   state: {
-    count: 100
+    count: 10
   },
 
   actions: {
@@ -17,7 +17,7 @@ export default {
 
   mutations: {
     [CountdownTypes.RESET] (state) {
-      state.count = 100
+      state.count = 10
     },
 
     [CountdownTypes.COUNTDOWN] (state) {

@@ -3,6 +3,8 @@
     h1 {{count}}
     button(@click="onIncreaseClick") increase
     button(@click="onDecreaseClick") decrease
+    button(@click="onResetClick") reset
+    button(@click="onStateClick") state
 
 </template>
 
@@ -21,6 +23,14 @@
         this.decrease()
       },
 
+      onResetClick () {
+        this.reset()
+      },
+
+      onStateClick () {
+        console.log('xhjLog: state', this.state)
+      },
+
       ...mapActions({
         increase: CounterTypes.INCREASE,
         decrease: CounterTypes.DECREASE,
@@ -30,17 +40,18 @@
 
     computed: {
       ...mapState({
+        state: state => state,
         count: state => state.counter.count
       })
     },
 
-    beforeMount () {
-      console.count('xhjLog: beforeMount')
+    mounted () {
+      console.count('xhjLog: Counter mounted')
     },
 
     beforeDestroy () {
       this.reset()
-      console.count('xhjLog: beforeDestroy')
+      console.count('xhjLog: Counter beforeDestroy')
     }
   }
 </script>

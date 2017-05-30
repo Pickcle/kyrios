@@ -2,6 +2,7 @@
   div
     h2 {{count}}
     button(@click="onResetClick") reset
+    button(@click="onStateClick") state
 </template>
 
 <script>
@@ -11,13 +12,41 @@
   export default {
     computed: {
       ...mapState({
-        count: state => state.countdown.count
+        count: state => state.countdown.count,
+        state: state => state
       })
     },
 
     methods: {
+      startTimer () {
+        this.stopTimer()
+        this.timer = setInterval(() => {
+          this.timerTick()
+        }, 1000)
+      },
+
+      timerTick () {
+        if (this.count > 0) {
+          this.countdown()
+        } else {
+          this.stopTimer()
+        }
+      },
+
+      stopTimer () {
+        if (this.timer) {
+          clearInterval(this.timer)
+          this.timer = null
+        }
+      },
+
       onResetClick () {
         this.reset()
+        this.startTimer()
+      },
+
+      onStateClick () {
+        console.log('xhjLog: countdown state', this.state)
       },
 
       ...mapActions({
@@ -27,18 +56,11 @@
     },
 
     created () {
-      console.count('xhjLog: countdown created')
-      this.timer = setInterval(() => {
-        this.countdown()
-      }, 1000)
+      this.startTimer()
     },
 
-    beforeDestory () {
-      console.count('xhjLog: countdown beforeDestory')
-      if (this.timer) {
-        clearInterval(this.timer)
-        this.timer = null
-      }
+    beforeDestroy () {
+      this.stopTimer()
     }
   }
 </script>

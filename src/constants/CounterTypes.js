@@ -1,3 +1,3 @@
-export const INCREASE = 'INCREASE'
-export const DECREASE = 'DECREASE'
-export const RESET = 'RESET'
+export const INCREASE = 'COUNTER_INCREASE'
+export const DECREASE = 'COUNTER_DECREASE'
+export const RESET = 'COUNTER_RESET'

@@ -1,2 +1,2 @@
-export const RESET = 'RESET'
-export const COUNTDOWN = 'COUNTDOWN'
+export const RESET = 'COUNTDOWN_RESET'
+export const COUNTDOWN = 'COUNTDOWN_COUNTDOWN'
