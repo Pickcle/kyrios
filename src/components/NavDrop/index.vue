@@ -1,9 +1,13 @@
 <template lang="jade">
-
+  div
+    nav-drop-item(
+      v-for="(item, index) in navList",
+      :config="item",
+      :key="index"
+    )
 </template>
 
 <script>
-  import NavDropMenu from './NavDropMenu.vue'
   import NavDropItem from './NavDropItem.vue'
 
   export default {
@@ -14,8 +18,7 @@
     },
 
     components: {
-      NavDropItem,
-      NavDropMenu
+      NavDropItem
     }
   }
 </script>

@@ -26,7 +26,6 @@
 
 <style lang="stylus">
   .side-bar
-    width: 150px
     height: 800px
     background-color: #f1f1f1
 </style>
