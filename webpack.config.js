@@ -55,6 +55,14 @@ module.exports = {
           limit: 100,
           name: 'images/[name].[ext]'
         }
+      },
+      {
+        test: /\.(svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 100,
+          name: 'images/[name].[ext]'
+        }
       }
     ]
   },

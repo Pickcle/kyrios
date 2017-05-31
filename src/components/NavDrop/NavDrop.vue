@@ -1,8 +1,9 @@
 <template lang="jade">
-  div
+  div.nav-drop
     nav-drop-item(
       v-for="(item, index) in navList",
-      :config="item",
+      :item-data="item",
+      :onTabClick="onTabClick",
       :key="index"
     )
 </template>
@@ -13,7 +14,12 @@
   export default {
     props: {
       navList: {
-        type: Array
+        type: Array,
+        default: []
+      },
+
+      onTabClick: {
+        type: Function
       }
     },
 
@@ -24,4 +30,9 @@
 </script>
 
 <style lang="stylus">
+  .nav-drop
+    display: flex
+    justify-content: center
+    width: 100%
+    height: 100%
 </style>

@@ -1,3 +1,59 @@
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul,
+figure
+    margin: 0
+    padding: 0
+
+body
+    background-color: #f2f3f5
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    color: #333
+
+ol, ul
+    list-style: none
+
+a
+    text-decoration: none
+    color: #333
+
+.font-14
+  font-size: 14px
+
+.blue
+  color: #23aee6
+
+.black
+  color: #232323
+
+for $sec in 2 4 6 8
+  .ts-dot-{$sec}
+    transition: all cubic-bezier(.22, .58, .12, .98) ($sec * .1)s
+
+
 .f-left
   float: left
 
