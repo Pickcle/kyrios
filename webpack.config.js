@@ -52,7 +52,7 @@ module.exports = {
         test: /\.(png|jpg|gif|jpeg)$/,
         loader: 'url-loader',
         query: {
-          limit: 100,
+          limit: 10000,
           name: 'images/[name].[ext]'
         }
       },
@@ -60,7 +60,7 @@ module.exports = {
         test: /\.(svg)$/,
         loader: 'url-loader',
         query: {
-          limit: 100,
+          limit: 10000,
           name: 'images/[name].[ext]'
         }
       }
