@@ -10,5 +10,8 @@ export default [
   },
   {
     route: 'navigation'
+  },
+  {
+    route: 'ajax'
   }
 ]
