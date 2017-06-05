@@ -5,6 +5,6 @@ var app = express()
 
 app.use(express.static('static'))
 
-var port = 8080
+var port = 5050
 
 module.exports = app.listen(port)
