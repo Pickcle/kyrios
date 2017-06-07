@@ -13,7 +13,7 @@
     methods: {
       onDownloadClick () {
         downloadFile('file')
-      }
+      },
 
       downloadFile (fileName, content) {
         var aLink = document.createElement('a');
