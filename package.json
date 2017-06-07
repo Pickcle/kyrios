@@ -2,6 +2,11 @@
   "name": "kyrios",
   "version": "1.0.0",
   "description": "a project with vue",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "vue": "^2.3.3",
     "vue-router": "^2.5.3",
@@ -32,11 +37,6 @@
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1"
-  },
-  "scripts": {
-    "server": "node server.js",
-    "start": "webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
