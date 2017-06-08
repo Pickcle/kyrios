@@ -42,7 +42,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .world-navigation
     margin: 24px auto 16px
     width: 1160px

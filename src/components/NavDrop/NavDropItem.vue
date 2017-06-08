@@ -55,7 +55,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .nav-drop-item
     display: inline-block
     font-size: 14px

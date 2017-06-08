@@ -111,7 +111,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .counter-button
     width: 104px
     height: 32px

@@ -24,7 +24,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .side-bar
     height: 800px
     background-color: #f1f1f1

@@ -21,7 +21,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .side-bar-item
     width: 100%
     height: 50px
