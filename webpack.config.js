@@ -1,7 +1,10 @@
 var path = require('path')
-var CleanWebpackPlugin = require('clean-webpack-plugin')
+var webpack = require('webpack')
+// var CleanWebpackPlugin = require('clean-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+var webpackDevConfig = require('./webpack.dev.js')
 
 var ROOT_PATH = __dirname
 var PUBLISH_PATH = path.join(__dirname, 'static')
@@ -9,12 +12,16 @@ var SRC_PATH = path.join(__dirname, 'src')
 
 module.exports = {
   entry: {
-    app: path.join(SRC_PATH, 'index.js')
+    app: [
+      './hotMiddlewareClient',
+      path.join(SRC_PATH, 'index.js')
+    ]
   },
 
   output: {
     path: PUBLISH_PATH,
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: webpackDevConfig.publicPath
   },
 
   resolve: {
@@ -68,12 +75,14 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(PUBLISH_PATH),
+    // new CleanWebpackPlugin(PUBLISH_PATH),
     new ExtractTextPlugin("style.css"),
     new HtmlWebpackPlugin({
       template: path.join(SRC_PATH, 'index.jade'),
       inject: true,
       filename: 'index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new FriendlyErrorsPlugin()
   ]
 }
