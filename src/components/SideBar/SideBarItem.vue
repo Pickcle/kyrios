@@ -14,7 +14,8 @@
 
     methods: {
       onSelfClick () {
-        this.$router.push(this.data.route)
+        // this.$router.push({ path: this.data.route })
+        window.location.href = `#/${this.data.route}`
       }
     }
   }

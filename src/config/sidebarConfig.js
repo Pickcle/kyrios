@@ -16,5 +16,9 @@ export default [
   },
   {
     route: 'download'
+  },
+  {
+    route: 'input',
+    pathParams: '/:isVisitor?'
   }
 ]

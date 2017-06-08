@@ -12,6 +12,10 @@ const routes = [
   {
     path: '/',
     component: Home
+  },
+  {
+    path: '*',
+    component: Home
   }
 ]
 
@@ -22,8 +26,9 @@ let componentName
 
 sidebarConfig.forEach(value => {
   componentName = getComponentName(value.route)
+  const pathParams = value.pathParams || ''
   const route = {
-    path: `/${value.route}`,
+    path: `/${value.route}${pathParams}`,
     component: require(`src/containers/${componentName}/index.vue`)
   }
   routes.push(route)
