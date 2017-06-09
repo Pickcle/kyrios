@@ -1,12 +1,16 @@
 <template lang="jade">
-  div.barrage-panel
-    input(:placeholder="defaultText", :disabled="isVisitor", maxlength="20", :class="{ red: isMax }", v-model="message", @focus="onFocus", @blur="onBlur")
-    counter-button(:on-click="onSendClick") 发送
-    span.visitor.c-default(v-if="isVisitor") 游客不能发送弹幕，请先
-      a(href="https://passport.bilibili.com/login", target="_blank") 登录
-      | 或
-      a(href="https://passport.bilibili.com/register/phone", target="_blank") 注册
-    span.limit(v-show="isMax") {{limitText}}
+  div
+    div.barrage-panel
+      input(:placeholder="defaultText", :disabled="isVisitor", maxlength="20", :class="{ red: isMax }", v-model="message", @focus="onFocus", @blur="onBlur")
+      counter-button.btn(v-if="!isVisitor", :on-click="onSendClick") 发送
+      span.visitor.c-default(v-if="isVisitor") 游客不能发送弹幕，请先
+        a(href="https://passport.bilibili.com/login", target="_blank") 登录
+        | 或
+        a(href="https://passport.bilibili.com/register/phone", target="_blank") 注册
+      span.limit(v-show="isMax") {{limitText}}
+
+    input(type="color")
+
 </template>
 
 <script>
@@ -33,7 +37,7 @@
       },
 
       isVisitor () {
-        return ~~this.$route.params.isVisitor !== 1
+        return ~~this.$route.params.isVisitor !== 0
       },
 
       limitText () {
@@ -62,6 +66,18 @@
 </script>
 
 <style lang="stylus" scoped>
+  input
+    display: block
+    width: 300px
+    height: 30px
+    margin: 20px
+    line-height: 30px
+    border: 1px solid black
+    border-radius: 4px
+    background-color: #fff
+    color: #666
+
+
   .barrage-panel
     position: relative
     width: 100%
@@ -89,6 +105,11 @@
       &.red
         color: #ff6464!important
         border-color: #ff6464!important
+
+    .btn
+      position: absolute
+      top: 0
+      right: 50px
 
     .visitor
       position: absolute

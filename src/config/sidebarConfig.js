@@ -3,6 +3,9 @@ export default [
     route: 'home'
   },
   {
+    route: 'github'
+  },
+  {
     route: 'counter'
   },
   {
@@ -12,7 +15,7 @@ export default [
     route: 'navigation'
   },
   {
-    route: 'ajax'
+    route: 'phone'
   },
   {
     route: 'download'
