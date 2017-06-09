@@ -27,7 +27,8 @@
 
     computed: {
       navList () {
-        const status = true ? 'master' : 'visitor'
+        const status = 'master'
+        // const status = 'visitor'
         const configs = navConfig[status]
 
         // 将isSelected注入
