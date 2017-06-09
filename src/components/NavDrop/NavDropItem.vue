@@ -1,6 +1,6 @@
 <template lang="jade">
   div.nav-drop-item.t-center
-    div.item-content(:class="{ line: !hasMenu }", @mouseenter.stop="onMouseEnter", @mouseleave.stop="onMouseLeave",@click="onTabClick(itemData)",)
+    div.item-content(:class="{ line: !hasMenu }", @mouseenter.stop="onMouseEnter", @mouseleave.stop="onMouseLeave", @click="onTabClick(itemData)",)
       span.title(:class="{ 'is-selected': itemData.isSelected }") {{itemData.config.name}}
       template(v-if="hasMenu")
         i.down-arrow.ts-dot-4(:class="{ up: arrowUp }")

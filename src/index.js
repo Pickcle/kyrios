@@ -1,7 +1,4 @@
 import Vue from 'vue'
-// import VueRouter from 'vue-router'
-import { mapActions } from 'vuex'
-
 import router from './router.js'
 import store from './store'
 

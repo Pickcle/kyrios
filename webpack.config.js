@@ -34,10 +34,15 @@ module.exports = {
 
   module: {
     loaders: [
-      // {
-      //   test: /\.(vue|js)$/,
-      //   loader: 'eslint'
-      // },
+      {
+        test: /\.(vue|js)$/,
+        enforce: "pre",
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader'
