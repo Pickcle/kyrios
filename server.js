@@ -5,6 +5,7 @@ var webpackDevConfig = require('./webpack.dev.js')
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
+var httpProxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.config.js')
 
 var app = express()
@@ -23,6 +24,11 @@ var hotMiddleware = webpackHotMiddleware(compiler, {
   log: function () {}
 })
 
+var proxyMiddleware = httpProxyMiddleware({
+  target: 'http://api.live.bilibili.com',
+  changeOrigin: true
+})
+
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
     hotMiddleware.publish({ action: 'reload' })
@@ -37,6 +43,8 @@ devMiddleware.waitUntilValid(function () {
 app.use(devMiddleware)
 
 app.use(hotMiddleware)
+
+app.use('/', proxyMiddleware)
 
 app.use(express.static('static'))
 

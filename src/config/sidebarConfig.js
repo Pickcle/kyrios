@@ -23,5 +23,8 @@ export default [
   {
     route: 'input',
     pathParams: '/:isVisitor?'
+  },
+  {
+    route: 'script'
   }
 ]

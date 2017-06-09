@@ -1,7 +1,7 @@
 <template lang="jade">
   div.github
     div.btn-container
-      button(v-for="(config, idx) in apiConfigs", :key="idx", @click="onApiClick(config)") {{config}}
+      button(v-for="(config, idx) in apiConfigs", :key="idx", @click="onApiClick(config)") {{getName(config)}}
     div.message {{response}}
 </template>
 
@@ -12,15 +12,20 @@
     data () {
       return {
         apiConfigs: [
-          'https://api.github.com/zen'
+          'https://api.github.com/zen',
+          'https://api.github.com/users/Pickcle'
         ],
         response: ''
       }
     },
 
     methods: {
+      getName (url) {
+        return url.replace('https://api.github.com/', '')
+      },
+
       onApiClick (url) {
-        axios(url).then(result => {
+        axios.get(url).then(result => {
           this.response = result.data
         }, error => {
           this.response = 'something error:' + JSON.stringify(error)
