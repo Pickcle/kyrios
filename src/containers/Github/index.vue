@@ -36,15 +36,6 @@
 </script>
 
 <style lang="stylus" scoped>
-  button
-    width: 100%
-    height: 30px
-    margin: 15px 0
-    border: 1px solid black
-    border-radius: 4px
-    background-color: #fff
-    color: #666
-
   .github
     height: 100%
 
@@ -53,6 +44,15 @@
       float: left
       width: 200px
       height: 100%
+
+      button
+        width: 100%
+        height: 30px
+        margin: 15px 0
+        border: 1px solid black
+        border-radius: 4px
+        background-color: #fff
+        color: #666
 
     .message
       float: left

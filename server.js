@@ -8,6 +8,8 @@ var webpackHotMiddleware = require('webpack-hot-middleware')
 var httpProxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.config.js')
 
+var apiServer = require('./apiServer.js')
+
 var app = express()
 
 var compiler = webpack(webpackConfig)
