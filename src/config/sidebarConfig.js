@@ -3,6 +3,9 @@ export default [
     route: 'home'
   },
   {
+    route: 'contactQQ'
+  },
+  {
     route: 'github'
   },
   {

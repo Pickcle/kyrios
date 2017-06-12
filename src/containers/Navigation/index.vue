@@ -5,7 +5,7 @@
 
 <script>
   import NavDrop from 'src/components/NavDrop'
-  import navConfig from 'src/config/navConfig'
+  import navConfig from 'src/config/navigationConfig'
 
   export default {
     methods: {
