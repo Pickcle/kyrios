@@ -1,6 +1,10 @@
 <template lang="jade">
-  p(:style="{ 'vertical-align': 'middle' }") 联系作者：348707253
-    img#BizQQWPA.qq-img(src="../../assets/images/qq.png")
+  div
+    p 联系作者
+      a(href="http://wpa.qq.com/msgrd?v=3&uin=348707253&site=qq&menu=yes", target="_blank")
+        img.qq-img(src="../../assets/images/qq.png")
+    p(:style="{ 'vertical-align': 'middle' }") 客服：800189233
+      img#BizQQWPA.qq-img(src="../../assets/images/qq.png")
 </template>
 
 <script>
@@ -9,7 +13,7 @@
       window.BizQQWPA.addCustom({
         aty: '0',
         a: '0',
-        nameAccount: 348707253,
+        nameAccount: 800189233,
         selector: 'BizQQWPA'
       })
     }
