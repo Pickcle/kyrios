@@ -12,6 +12,9 @@ export default [
     route: 'render'
   },
   {
+    route: 'event'
+  },
+  {
     route: 'contactQQ'
   },
   {
