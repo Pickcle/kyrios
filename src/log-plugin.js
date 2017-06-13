@@ -1,11 +1,11 @@
 export default {
-  install: function (Vue, options) {
-    Vue.log = function (text) {
+  install (Vue, options) {
+    Vue.log = (text) => {
       console.log('log-plugin: ', text)
     }
 
     Vue.mixin({
-      created: function () {
+      created () {
         console.log('log-plugin: created')
       }
     })

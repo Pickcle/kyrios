@@ -7,6 +7,8 @@ html
       div.nav.f-left
         side-bar
       div.content.f-left
+        my-render(:level="5", :number="4")
+          slot header
         router-view
     
     div.script-requirement
