@@ -6,6 +6,12 @@ export default [
     route: 'directive'
   },
   {
+    route: 'data'
+  },
+  {
+    route: 'render'
+  },
+  {
     route: 'contactQQ'
   },
   {
