@@ -3,6 +3,9 @@ export default [
     route: 'home'
   },
   {
+    route: 'directive'
+  },
+  {
     route: 'contactQQ'
   },
   {
