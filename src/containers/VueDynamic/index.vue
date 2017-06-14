@@ -1,7 +1,8 @@
 <template lang="jade">
   div
     button(@click="changeView") changeView
-    component(:is="currentView")
+    keep-alive
+      component(:is="currentView")
 </template>
 
 <script>
