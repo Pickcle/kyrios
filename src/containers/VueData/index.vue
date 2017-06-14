@@ -5,14 +5,18 @@
     button(@click="onObjAddClick") obj-add
     button(@click="onObjDeleteClick") obj-delete
     button(@click="objChange") obj-change
+    p(v-for="item in name") {{item}}
+    p(v-for="item in age") {{item}}
     p(v-for="(item, index) in dataList") {{item.label}}
-    p(v-for="(item, index) in getObjDataList()") {{item}}
+    p(v-for="(item, index) in obj") {{item}}
 </template>
 
 <script>
   export default {
     data () {
       return {
+        name: 'Pickcle',
+        age: 3,
         dataList: [
           {
             label: 'initial array content'
@@ -89,16 +93,19 @@
       },
 
       objChange () {
-        this.obj[0].label = this.obj[0].label + '0'
+        // component will update, watch is fired if deep is true
+        // this.obj[0].label = this.obj[0].label + '0'
+
+        // component will update
         // const randomKey = this.genRandomText()
         // const cloneObj = {...this.obj}
         // cloneObj[Object.keys(this.obj)[0]][randomKey] = randomKey
         // this.obj = Object.assign({}, this.obj, cloneObj)
         // console.log('xhjLog: objChange', this.obj)
-      },
 
-      getObjDataList () {
-        return Object.values(this.obj)
+        // component will not update unless use $forceUpdate
+        this.obj[1] = {label: '1'}
+        this.$forceUpdate()
       },
 
       genRandomText () {
