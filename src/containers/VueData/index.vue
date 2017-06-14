@@ -25,6 +25,14 @@
       }
     },
 
+    activated () {
+      console.count('xhjLog: activated')
+    },
+
+    deactivated () {
+      console.count('xhjLog: deactivated')
+    },
+
     methods: {
       onAddClick () {
         this.dataList.push({
