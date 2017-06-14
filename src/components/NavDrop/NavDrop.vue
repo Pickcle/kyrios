@@ -2,6 +2,7 @@
   div.nav-drop
     nav-drop-item(
       v-for="(item, index) in navList",
+      ref="dropItem",
       :item-data="item",
       :onTabClick="onTabClick",
       :key="index"
@@ -25,6 +26,10 @@
 
     components: {
       NavDropItem
+    },
+
+    mounted () {
+      console.log('xhjLog: mounted refs: ', this.$refs.dropItem)
     }
   }
 </script>

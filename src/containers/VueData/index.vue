@@ -4,8 +4,9 @@
     button(@click="onDeleteClick") array-delete
     button(@click="onObjAddClick") obj-add
     button(@click="onObjDeleteClick") obj-delete
+    button(@click="objChange") obj-change
     p(v-for="(item, index) in dataList") {{item.label}}
-    p(v-for="(item, index) in getObjDataList()") {{item.label}}
+    p(v-for="(item, index) in getObjDataList()") {{item}}
 </template>
 
 <script>
@@ -25,12 +26,25 @@
       }
     },
 
+    watch: {
+      obj: {
+        handler () {
+          console.count('xhjLog: watch obj')
+        },
+        deep: true
+      }
+    },
+
     activated () {
       console.count('xhjLog: activated')
     },
 
     deactivated () {
       console.count('xhjLog: deactivated')
+    },
+
+    destroyed () {
+      console.count('xhjLog: destroyed')
     },
 
     methods: {
@@ -72,6 +86,15 @@
 
         // component will not update
         // delete this.obj[deleteKey]
+      },
+
+      objChange () {
+        this.obj[0].label = this.obj[0].label + '0'
+        // const randomKey = this.genRandomText()
+        // const cloneObj = {...this.obj}
+        // cloneObj[Object.keys(this.obj)[0]][randomKey] = randomKey
+        // this.obj = Object.assign({}, this.obj, cloneObj)
+        // console.log('xhjLog: objChange', this.obj)
       },
 
       getObjDataList () {
