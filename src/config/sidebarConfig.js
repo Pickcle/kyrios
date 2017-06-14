@@ -3,16 +3,19 @@ export default [
     route: 'home'
   },
   {
-    route: 'directive'
+    route: 'vue-directive'
   },
   {
-    route: 'data'
+    route: 'vue-data'
   },
   {
-    route: 'render'
+    route: 'vue-render'
   },
   {
-    route: 'event'
+    route: 'vue-event'
+  },
+  {
+    route: 'vue-dynamic'
   },
   {
     route: 'contactQQ'

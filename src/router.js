@@ -20,7 +20,7 @@ const routes = [
 ]
 
 // 将首字母大写，route转换成compnentName
-const getComponentName = name => name.replace(/\b\w/, word => word.toUpperCase())
+const getComponentName = name => name.replace(/\b\w/g, word => word.toUpperCase()).split('-').join('')
 
 let componentName
 
