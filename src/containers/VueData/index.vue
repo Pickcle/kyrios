@@ -2,12 +2,14 @@
   div
     button(@click="onAddClick") array-add
     button(@click="onDeleteClick") array-delete
+    button(@click="randomSort") array-random-sort
     button(@click="onObjAddClick") obj-add
     button(@click="onObjDeleteClick") obj-delete
     button(@click="objChange") obj-change
-    p(v-for="item in name") {{item}}
-    p(v-for="item in age") {{item}}
-    p(v-for="(item, index) in dataList") {{item.label}}
+    //- p(v-for="item in name") {{item}}
+    //- p(v-for="item in age") {{item}}
+    transition-group(name="flip-list", tag="p", mode="out-in")
+      p(v-for="(item, index) in dataList", :key="item") {{item.label}}
     p(v-for="(value, key, index) in obj") {{value}}{{',key:' + key}}{{',index:' + index}}
 </template>
 
@@ -60,6 +62,10 @@
 
       onDeleteClick () {
         this.dataList.pop()
+      },
+
+      randomSort () {
+        this.dataList.sort((a, b) => Math.random() > 0.5)
       },
 
       onObjAddClick () {
@@ -116,4 +122,15 @@
 </script>
 
 <style lang="stylus" scoped>
+  .flip-list-enter-active, .flip-list-leave-active
+    transition: all 1.5s
+
+  .flip-list-enter, .flip-list-leave-active
+    opacity: 0
+
+  .flip-list-leave-active
+    position: absolute
+
+  .flip-list-move
+    transition: transform 1.5s
 </style>

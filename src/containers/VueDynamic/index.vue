@@ -39,7 +39,6 @@
       },
 
       beforeEnter (el) {
-
       },
 
       enter (el, done) {
@@ -47,15 +46,12 @@
       },
 
       afterEnter (el) {
-
       },
 
       enterCancelled (el) {
-
       },
 
       beforeLeave (el) {
-
       },
 
       leave (el, done) {
@@ -63,11 +59,9 @@
       },
 
       afterLeave (el) {
-
       },
 
       leaveCancelled (el) {
-        
       }
     },
 
