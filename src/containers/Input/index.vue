@@ -10,8 +10,24 @@
       span.limit(v-show="isMax") {{limitText}}
 
     input(type="color")
-    input#checkbox(type="checkbox", :style="{ 'display': 'inline-block' }", v-model="checked")
-    label(for="checkbox") {{checked}}
+    input#jack.d-i-block(type="checkbox", value="jack", v-model="checkedNames")
+    label(for="jack") Jack
+    input#john.d-i-block(type="checkbox", value="john", v-model="checkedNames")
+    label(for="john") John
+    input#john.d-i-block(type="checkbox", value="jane", v-model="checkedNames")
+    label(for="jane") Jane
+    p names: {{checkedNames}}
+
+    input#one(type="radio", value="One", v-model="picked")
+    label(for="one") one
+    input#two(type="radio", :value="message", v-model="picked")
+    label(for="two") two
+    p picked: {{picked}}
+
+    select(v-model="selected", multiple="true")
+      option A
+      option B
+    p selected: {{selected}}
 
 </template>
 
@@ -23,7 +39,9 @@
       return {
         message: '',
         isFocus: false,
-        checked: false
+        checkedNames: [],
+        picked: '',
+        selected: []
       }
     },
 
@@ -70,7 +88,6 @@
 
 <style lang="stylus" scoped>
   input
-    display: block
     width: 300px
     height: 30px
     margin: 20px
@@ -80,6 +97,13 @@
     background-color: #fff
     color: #666
 
+    &:focus
+      border-color: #23ade5
+      color: #333
+
+    &.red
+      color: #ff6464!important
+      border-color: #ff6464!important
 
   .barrage-panel
     position: relative
@@ -90,24 +114,6 @@
     border-radius: 0 0 12px 12px
     background-color: #fff
     font-size: 12px
-
-    input
-      width: 500px
-      height: 32px
-      margin: 16px
-      border: 1px solid #e9eaec
-      border-radius: 4px
-      font-size: 12px
-      color: #b4b4b4
-      background-color: #fff
-
-      &:focus
-        border-color: #23ade5
-        color: #333
-
-      &.red
-        color: #ff6464!important
-        border-color: #ff6464!important
 
     .btn
       position: absolute
