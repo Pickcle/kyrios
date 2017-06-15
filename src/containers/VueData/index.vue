@@ -8,7 +8,7 @@
     p(v-for="item in name") {{item}}
     p(v-for="item in age") {{item}}
     p(v-for="(item, index) in dataList") {{item.label}}
-    p(v-for="(item, index) in obj") {{item}}
+    p(v-for="(value, key, index) in obj") {{value}}{{',key:' + key}}{{',index:' + index}}
 </template>
 
 <script>
@@ -23,7 +23,7 @@
           }
         ],
         obj: {
-          0: {
+          10000: {
             label: 'initial obj content'
           }
         }

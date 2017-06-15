@@ -1,7 +1,7 @@
 <template lang="jade">
   div
     div.barrage-panel
-      input(:placeholder="defaultText", :disabled="isVisitor", maxlength="20", :class="{ red: isMax }", v-model="message", @focus="onFocus", @blur="onBlur")
+      input(:placeholder="defaultText", :disabled="isVisitor", maxlength="20", :class="{ red: isMax }", v-model.trim.number="message", @focus="onFocus", @blur="onBlur")
       counter-button.btn(v-if="!isVisitor", :on-click="onSendClick") 发送
       span.visitor.c-default(v-if="isVisitor") 游客不能发送弹幕，请先
         a(href="https://passport.bilibili.com/login", target="_blank") 登录
@@ -10,6 +10,8 @@
       span.limit(v-show="isMax") {{limitText}}
 
     input(type="color")
+    input#checkbox(type="checkbox", :style="{ 'display': 'inline-block' }", v-model="checked")
+    label(for="checkbox") {{checked}}
 
 </template>
 
@@ -20,7 +22,8 @@
     data () {
       return {
         message: '',
-        isFocus: false
+        isFocus: false,
+        checked: false
       }
     },
 
