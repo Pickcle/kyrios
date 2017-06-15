@@ -18,6 +18,9 @@ export default [
     route: 'vue-dynamic'
   },
   {
+    route: 'vue-transition'
+  },
+  {
     route: 'contactQQ'
   },
   {
