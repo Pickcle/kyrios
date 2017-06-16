@@ -21,6 +21,9 @@ export default [
     route: 'vue-transition'
   },
   {
+    route: 'clipboard'
+  },
+  {
     route: 'contactQQ'
   },
   {
