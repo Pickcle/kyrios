@@ -22,6 +22,14 @@ export default {
         {
           name: 'TA的稿件',
           route: 'article'
+        },
+        {
+          name: '我的收藏',
+          route: 'collection'
+        },
+        {
+          name: '设置',
+          route: 'setting'
         }
       ]
     }

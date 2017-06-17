@@ -26,10 +26,6 @@
 
     components: {
       NavDropItem
-    },
-
-    mounted () {
-      console.log('xhjLog: mounted refs: ', this.$refs.dropItem)
     }
   }
 </script>

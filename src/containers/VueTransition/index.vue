@@ -78,8 +78,8 @@
     transition: all 1.5s
 
   .fade-enter-active, .fade-leave-active
-    transition: all 1.5s
+    /*transition: all 1.5s*/
 
   .fade-enter, .fade-leave-active
-    opacity: 0
+    /*opacity: 0*/
 </style>
