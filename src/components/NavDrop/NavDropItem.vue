@@ -9,10 +9,9 @@
           :style="{ height: contentHeight }",
           name="menu-item",
           tag="ul",
+          appear=true,
           @before-enter="beforeEnter",
-          @enter="enter",
-          @leave="leave",
-          appear=true
+          @enter="enter"
         )
           //- ul.drop-menu(v-show="arrowUp")
           li(
@@ -24,12 +23,11 @@
 </template>
 
 <script>
-  const delayPeriod = 200
+  const delayPeriod = 300
   export default {
     data () {
       return {
-        arrowUp: false,
-        timers: []
+        arrowUp: false
       }
     },
 
@@ -55,12 +53,6 @@
     },
 
     methods: {
-      // onTitleClick () {
-      //   if (this.itemData.config.route) {
-      //     this.$router.push({name: this.itemData.config.route, params: {id: this.itemData.uid}})
-      //   }
-      // },
-
       onMouseEnter () {
         this.arrowUp = true
       },
@@ -69,52 +61,25 @@
         this.arrowUp = false
       },
 
+      // it need a throttler to avoid setTimeout side-effect
       beforeEnter (el) {
-        if (el.dataset.index === '0') {
-          console.log('xhjLog: beforeEnter', el)
-        }
         el.style.opacity = 0
         el.style.transform = 'translate(100px, 0)'
       },
 
       enter (el, done) {
         const index = el.dataset.index
-        const delay = index * delayPeriod
-        if (el.dataset.index === '0') {
-          console.log('xhjLog: enter', el)
-        }
 
-        this.timers[index] = setTimeout(() => {
+        const delay = index * delayPeriod
+        setTimeout(() => {
           el.style.opacity = 1
           el.style.transform = 'translate(0, 0)'
-          if (el.dataset.index === '0') {
-            console.log('xhjLog: set', el)
-          }
 
           setTimeout(() => {
-            if (el.dataset.index === '0') {
-              console.log('xhjLog: done', el)
-            }
             done()
           }, delayPeriod)
           // done()
         }, delay)
-      },
-
-      leave (el, done) {
-        const index = el.dataset.index
-        this.timers[index] && clearTimeout(this.timers[index])
-        this.timers[index] = null
-        console.log('xhjLog: leave', this.timers)
-        done()
-        // const delay = el.dataset.index * delayPeriod
-        // setTimeout(() => {
-        //   el.style.opacity = 0
-        //   setTimeout(() => {
-        //     done()
-        //   }, delayPeriod)
-        //   // done()
-        // }, delay)
       }
     }
   }
