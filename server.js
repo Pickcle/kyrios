@@ -46,7 +46,7 @@ app.use(devMiddleware)
 
 app.use(hotMiddleware)
 
-app.use('/', proxyMiddleware)
+// app.use('/', proxyMiddleware)
 
 app.use(express.static('static'))
 
