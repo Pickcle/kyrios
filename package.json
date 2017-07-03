@@ -1,5 +1,5 @@
 {
-  "name": "kyrios",
+  "name": "vue-learning",
   "version": "1.0.0",
   "description": "a project with vue",
   "scripts": {
@@ -54,12 +54,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pickcle/kyrios.git"
+    "url": "git+https://github.com/Pickcle/vue-learning.git"
   },
   "author": "xiaohj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Pickcle/kyrios/issues"
+    "url": "https://github.com/Pickcle/vue-learning/issues"
   },
-  "homepage": "https://github.com/Pickcle/kyrios#readme"
+  "homepage": "https://github.com/Pickcle/vue-learning#readme"
 }
