@@ -21,4 +21,3 @@ new Vue({
   store,
   router
 })
-abdsfs
