@@ -1,2 +1,2 @@
 # vue-learning
-a project with vue
+learn vue.
