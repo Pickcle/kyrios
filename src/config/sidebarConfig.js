@@ -3,6 +3,9 @@ export default [
     route: 'home'
   },
   {
+    route: 'mount'
+  },
+  {
     route: 'vue-directive'
   },
   {
