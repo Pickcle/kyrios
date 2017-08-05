@@ -23,22 +23,29 @@ async function C () {
   console.log('C end')
 }
 
-function main () {
-  for (var i = 0; i < 10; i++) {
+async function main () {
+  for (var i = 0; i < 100; i++) {
     setTimeout(A, 0)
   }
-  B()
-  C()
+  setTimeout(function () {
+    B()
+    C()
+  }, 0)
+  console.log('main begin')
+  await sleep(400)
+  console.log('main end')
+}
+
+
+function main2 () {
+  callA()
+  setTimeout(function () {
+    B()
+    C()
+  }, 0)
 }
 
 var count = 10
-
-function main2 () {
-  callA(count)
-  B()
-  C()
-}
-
 function callA () {
   if (count < 0) {
     return
@@ -56,3 +63,14 @@ function sleep (ms) {
 }
 
 main()
+
+
+function A () {
+
+}
+
+function B () {
+
+}
+
+setTimeout()
